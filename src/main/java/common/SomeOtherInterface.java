@@ -1,5 +1,5 @@
 package common;
 
 public interface SomeOtherInterface {
-    public void doSomeOther();
+    public int doSomeOther();
 }

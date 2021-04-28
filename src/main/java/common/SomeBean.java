@@ -11,9 +11,11 @@ public class SomeBean {
     public SomeBean() {
     }
 
-    public void foo(){
-        field1.doSomething();
-        field2.doSomeOther();
+    public int foo1(){
+        return field1.doSomething();
+    }
+    public int foo2(){
+        return field2.doSomeOther();
     }
 
 }
