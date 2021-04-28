@@ -10,21 +10,25 @@ public class InjectTest {
     void calcIntegers() {
 
         try{
+            SomeBean sb = (new Injector()).inject(new SomeBean());
+            assertTrue(2==sb.foo1());
+            assertTrue(5==sb.foo2());
+
+        }
+        catch (Exception ex){
+            ex.getMessage();
+        }
+    }
+    @org.junit.jupiter.api.Test
+    void calcExeptions() {
+        try{
             SomeBeanExp sb = (new Injector()).inject(new SomeBeanExp());
 
         }catch (Exception ex){
             assertEquals("Невозможно обработать field1", ex.getMessage());
         }
-    }
-    @org.junit.jupiter.api.Test
-    void calcExeptions() {
 
-        try{
-            SomeBean sb = (new Injector()).inject(new SomeBean());
-        }
-        catch (Exception ex){
-            assertEquals("Недопустимый знак", ex.getMessage());
-        }
+
         try{
             EmptyClass sb = (new Injector()).inject(new EmptyClass());
         }
